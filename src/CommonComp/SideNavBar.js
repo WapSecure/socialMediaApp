@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, withRouter } from "react-router-dom";
+import Button from '../CommonComp/button/button.jsx'
 
-const StyledSideNav = styled.div`   
+const StyledSideNav = styled.div` 
     position: fixed;     /* Fixed Sidebar (stay in place on scroll and position relative to viewport) */
     height: 100%;
-    width: 60px;     /* Set the width of the sidebar */
+    width: 50px;     /* Set the width of the sidebar */
     z-index: 1;      /* Stay on top of everything */
     top: 0em;      /* Stay at the top */
-    background-color: #2E4158;
+    background-color: white;
     overflow-x: hidden;     /* Disable horizontal scroll */
     padding-top: 20px;
 `;
@@ -21,37 +22,38 @@ class SideNav extends React.Component {
             items: [
                 {
                   path: '/', /* path is used as id to check which NavItem is active basically */
-                  name: 'Home',
-                  css: 'fas fa-home',
+                  name: 'Dashboard',
+                  css: 'fas fa-home', 
                   key: 1 /* Key is required, else console throws error. Does this please you Mr. Browser?! */
                 },
                 {
-                  path: '/fb',
-                  name: 'facebook',
-                  css: 'fab fa-facebook-square',
+                  path: '/task',
+                  name: 'task',
+                  css: 'fas fa-tasks',
                   key: 2
                 },
                 {
-                  path: '/tw',
-                  name: 'twitter',
-                  css: 'fab fa-twitter-square',
+                  path: '/post',
+                  name: 'post',
+                  css: 'fas fa-location-arrow',
+                  text: 'Text show here',
                   key: 3
                 },
                 {
-                    path: '/inst',
-                    name: 'instagram',
-                    css: 'fab fa-instagram',
+                    path: '/calender',
+                    name: 'calender',
+                    css: 'fas fa-calendar-alt',
                     key: 4
                 },
                 {//Todo:change url
-                    path: '/pin',
-                    name: 'pinterest',
-                    css: 'fab fa-pinterest-square',
+                    path: '/messages',
+                    name: 'messages',
+                    css: 'fas fa-comment-dots',
                     key: 5
                 },
                 {//Todo:change url
                     path: '/user-settings',
-                    name: 'userSettings',
+                    name: 'settings',
                     css: 'fa fa-user-cog',
                     key: 6
                 }
@@ -74,6 +76,7 @@ class SideNav extends React.Component {
                                 path={item.path}
                                 name={item.name}
                                 css={item.css}
+                                text={item.text}
                                 onItemClick={this.onItemClick}
                                 active={item.path === activePath}
                                 key={item.key}
@@ -95,11 +98,11 @@ const StyledNavItem = styled.div`
     margin-bottom: 15px;   /* Puts space between NavItems */
     a {
         font-size: 2em;
-        color: ${(props) => props.active ? "#66DAC7" : "white"};
+        color: ${(props) => props.active ? "#3FCF8E" : "black"};
         text-decoration:none;
         :hover {
             opacity: 0.7;    
-            color:"white";
+            color:"black";
             text-decoration: none; /* Gets rid of underlining of icons */
         }  
     }
@@ -115,7 +118,7 @@ class NavItem extends React.Component {
         const { active } = this.props;
         return(
             <StyledNavItem active={active}>
-                <Link to={this.props.path} className={this.props.css} onClick={this.handleClick}>
+                <Link to={this.props.path} className={this.props.css} text={this.props.text} onClick={this.handleClick}>
                     <NavIcon></NavIcon>
                 </Link>
             </StyledNavItem>

@@ -48,12 +48,18 @@ class SocialCard extends Component{
         }else if(String(this.props.platform) === "pinterest"){
             connect =<PinConnect/>
         }
+        else if(String(this.props.platform) === "linkedin"){
+        connect =<PinConnect/>
+        }
+        else if(String(this.props.platform) === "googleStore"){
+        connect =<PinConnect/>
+        }
         return(
             <>
-            <Card style={{ width: '16rem', margin:'5px' }} className="card" border='light'>
+            <Card style={{ width: '10rem', margin:'5px' }} className="card" border='light'>
                 <Card.Body>
                     {alert}                                
-                    <span className="icon" style={{color:this.props.color ,marginLeft: "40%"}}>
+                    <span className="icon" style={{color:this.props.color, borderRadius:'50%', marginLeft: "30%"}}>
                         <i className={this.props.icon}/>
                     </span>
                     <Card.Title style={{"textAlign":'center'}}>{this.props.title}</Card.Title>
