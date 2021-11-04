@@ -16,16 +16,14 @@ const Navbar = () => {
         <>
            <Nav>
             <NavLogo to="/">
-                <h3>Dashboard</h3>
+                <h3 style={{padding:"20px", float: "left"}}>Post</h3>
             </NavLogo>
             <Bars />
 
             <NavMenu>
 
-                <NavLink to="/" activeStyle>
-                <Button>Create Post <span style={{marginLeft:'30px'}}><i class="fas fa-chevron-down"></i></span></Button>
-                </NavLink>
-                <NavLink to="/sign-in" activeStyle>
+                <NavLink to="/" activeStyle style={{display: 'flex', justifyContent: 'flexEnd' }}><p>Filter by &nbsp; &nbsp;</p>
+                <Button>Account</Button>
                 </NavLink>
             </NavMenu> 
            </Nav> 

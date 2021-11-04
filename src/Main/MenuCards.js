@@ -10,7 +10,7 @@ import FbConnect from '../Authorization/FbConnect';
 import TwConnect from '../Authorization/TwConnect';
 import PinConnect from '../Authorization/PinConnect';
 
-class SocialCard extends Component{
+class MenuCards extends Component{
     constructor(props){
         super(props);
         this.state= {
@@ -56,17 +56,17 @@ class SocialCard extends Component{
         }
         return(
             <>
-            <Card style={{ width: '7rem', margin:'5px', borderRadius: '50%', backgroundColor: '#E5E5E5' }} className="card" border= '0'>
+            <Card style={{ width: '20rem', height: '5rem', margin:'10px'}} className="card" border='light'>
                 <Card.Body>
                     {alert}                                
                     <span className="icon" style={{color:this.props.color, borderRadius:'50%', marginLeft: "30%"}}>
                         <i className={this.props.icon}/>
                     </span>
-                    <Card.Title style={{"textAlign":'center'}}>{this.props.title}</Card.Title>
+                    <Card.Title style={{"textAlign":'center', fontWeight:'900'}}>{this.props.title}</Card.Title>
                     <Card.Text>
                         {this.props.text}                                            
                     </Card.Text>
-                    {/*{connect}*/}
+                    {connect}
                 </Card.Body>
             </Card>
             </>
@@ -74,4 +74,4 @@ class SocialCard extends Component{
     }
 }
 
-export default SocialCard
+export default MenuCards

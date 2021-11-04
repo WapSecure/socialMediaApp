@@ -10,7 +10,7 @@ import FbConnect from '../Authorization/FbConnect';
 import TwConnect from '../Authorization/TwConnect';
 import PinConnect from '../Authorization/PinConnect';
 
-class SocialCard extends Component{
+class TodoCards extends Component{
     constructor(props){
         super(props);
         this.state= {
@@ -56,7 +56,7 @@ class SocialCard extends Component{
         }
         return(
             <>
-            <Card style={{ width: '7rem', margin:'5px', borderRadius: '50%', backgroundColor: '#E5E5E5' }} className="card" border= '0'>
+            <Card style={{ width: '20rem', margin:'10px', borderLeft: '7px solid #3FCF8E' }} className="card" border='#3FCF8E'>
                 <Card.Body>
                     {alert}                                
                     <span className="icon" style={{color:this.props.color, borderRadius:'50%', marginLeft: "30%"}}>
@@ -66,7 +66,7 @@ class SocialCard extends Component{
                     <Card.Text>
                         {this.props.text}                                            
                     </Card.Text>
-                    {/*{connect}*/}
+                    {connect}
                 </Card.Body>
             </Card>
             </>
@@ -74,4 +74,4 @@ class SocialCard extends Component{
     }
 }
 
-export default SocialCard
+export default TodoCards

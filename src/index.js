@@ -15,6 +15,9 @@ import UserSettings from './Main/UserSettings'
 
 import InstagramRedirect from "./RedirectComp/InstagramRedirect"
 import Home from "./Main/Home"
+import Tasks from "./Main/Task"
+import Posts from "./Main/Post"
+import Calender from "./Main/Calender"
 import InstaMedia from "./Social/InstComp/InstaMedia"
 import * as serviceWorker from './serviceWorker';
 import './Styles/index.css';
@@ -47,9 +50,9 @@ const routing = (
       <Switch>
         <Provider store= {store}>
           <Route exact path="/" component = {Home}/> 
-          <Route exact path="/InstaG" component = {InstaMedia}/> 
-          <PrivateRoute path="/fb" component={Fb_Main} />
-          <PrivateRoute path="/tw" component={Tw_Main} />
+          <Route exact path="/task" component = {Tasks}/> 
+          <Route exact path="/Post" component={Posts} />
+          <Route exact path="/Calender" component={Calender} />
           <Route path="/inst" component={Inst_Main}/>
           <PrivateRoute path="/pin" component={Pin_Main}/>
           <Route path="/user-settings" component={UserSettings}/>
